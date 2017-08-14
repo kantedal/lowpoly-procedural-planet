@@ -4,7 +4,6 @@
 varying vec2 vUv;
 varying vec3 vPosition;
 varying vec3 vCenteredPosition;
-varying vec3 vNormal;
 
 uniform vec3 sunPosition;
 uniform float time;
@@ -17,7 +16,5 @@ void main() {
     vec3 dX = dFdx(vPosition);
     vec3 dY = dFdy(vPosition);
     vec3 normal = normalize(cross(dX, dY));
-
-
     gl_FragColor = vec4(shading(vec3(0.8, 0.8, 0.0), vec3(0.8, 0.3, 0.0), normal), 1.0);
 }

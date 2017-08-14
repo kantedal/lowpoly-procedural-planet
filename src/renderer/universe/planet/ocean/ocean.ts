@@ -1,5 +1,5 @@
-import {IcoSphereGeometry} from "../../../utils/icosphere-geometry";
-import {PlanetSettings} from "../../../settings.service";
+import {IcoSphereGeometry} from '../../../utils/icosphere-geometry';
+import {PlanetSettings} from '../../../settings.service';
 
 /*
  Shader imports
