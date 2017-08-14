@@ -1,0 +1,67 @@
+<div class="app">
+  <div *ngIf="_selectedPlanet.asObservable() | async"  class="options-pane">
+    <div class="property-container">
+      <div style="font-size: 18px; font-weight: 200; margin-top: 15px; margin-bottom: 15px;" class="property-header">
+        Planet settings
+      </div>
+    </div>
+
+    <div class="property-container">
+      <div class="property-header">
+        Planet seed
+      </div>
+      <span class="propery-value">{{_selectedPlanet.value.planetSeed.toFixed(1)}}</span>
+      <md-slider (input)="planetSeedChanged($event)" min="0.0" max="5.0" step="0.1" value="{{_selectedPlanet.value.planetSeed}}"></md-slider>
+    </div>
+
+    <div class="property-container">
+      <div class="property-header">
+        Planet radius
+      </div>
+      <span class="propery-value">{{_selectedPlanet.value.planetRadius.toFixed(1)}}</span>
+      <md-slider (input)="planetRadiusChanged($event)" min="0.0" max="20.0" step="0.1" value="{{_selectedPlanet.value.planetRadius}}"></md-slider>
+    </div>
+
+    <div class="property-container">
+      <div class="property-header">
+        Ocean level
+      </div>
+      <span class="propery-value">{{_selectedPlanet.value.oceanLevel.toFixed(1)}}</span>
+      <md-slider (input)="oceanLevelChanged($event)"  min="0.0" max="20.0" step="0.1" value="{{_selectedPlanet.value.oceanLevel}}"></md-slider>
+    </div>
+
+    <div class="property-container">
+      <div class="property-header">
+        Planet temperature
+      </div>
+      <span class="propery-value">{{_selectedPlanet.value.planetTemperature.toFixed(1)}}</span>
+      <md-slider (input)="planetTemperatureChanged($event)"  min="-20.0" max="40.0" step="0.1" value="{{_selectedPlanet.value.planetTemperature}}"></md-slider>
+    </div>
+
+    <div class="property-container">
+      <div class="property-header">
+        Planet frequency
+      </div>
+      <span class="propery-value">{{_selectedPlanet.value.planetFrequency.toFixed(1)}}</span>
+      <md-slider (input)="planetFrequencyChanged($event)"  min="0.0" max="5.0" step="0.1" value="{{_selectedPlanet.value.planetFrequency}}"></md-slider>
+    </div>
+
+    <div class="property-container">
+      <div class="property-header">
+        Planet amplitude
+      </div>
+      <span class="propery-value">{{_selectedPlanet.value.planetAmplitude.toFixed(1)}}</span>
+      <md-slider (input)="planetAmplitudeChanged($event)"  min="0.0" max="5.0" step="0.1" value="{{_selectedPlanet.value.planetAmplitude}}"></md-slider>
+    </div>
+
+    <div class="property-container">
+      <div class="property-header">
+        Cloud count
+      </div>
+      <span class="propery-value">{{_selectedPlanet.value.cloudCount.value}}</span>
+      <md-slider (input)="cloudCountChanged($event)"  min="0" max="100" step="1" value="{{_selectedPlanet.value.cloudCount.value}}"></md-slider>
+    </div>
+
+  </div>
+</div>
+<div #renderArea class="render-area"></div>
